@@ -16,12 +16,6 @@ const customTip = document.querySelector('.custom')
                                     AddeventListeners
 
 -------------------------------------------------------------------------------------------------------------*/
-
-bill.oninput = function(event){
-    dealWithResetButton();
-    calculate();
-}
-
 customTip.addEventListener('click', calculateCustomTip);
 
 buttons.forEach((button) => {
@@ -45,10 +39,21 @@ reset.addEventListener('mouseleave', ()=>{
                                     Oninput
 
 -------------------------------------------------------------------------------------------------------------*/
+bill.oninput = function(event){
+    dealWithResetButton();
+
+    if(customTip.value !== '' && (numberOfPeople.value !== '' || numberOfPeople.value > 0) ){
+        calculate();
+    }
+    
+}
 
 customTip.oninput = function(){  
-    dealWithResetButton();  
-    calculate();
+    dealWithResetButton();
+    
+    if((bill.value !== '' || bill.value < 0) && (numberOfPeople.value !== '' || numberOfPeople.value > 0) ){
+        calculate();
+    }
 }
 
 numberOfPeople.oninput = function(){
@@ -112,8 +117,11 @@ function calculateCustomTip(){
     buttons.forEach((button) => {
         button.classList.remove('active');
     });
-    this.classList.add('active');  
-    calculate();
+    this.classList.add('active');
+    
+    if((bill.value !== '' || bill.value < 0) && (numberOfPeople.value !== '' || numberOfPeople.value > 0) ){
+        calculate();
+    }
 }
 
 /*------------------Reset--------------------------------- */
