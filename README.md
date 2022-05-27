@@ -13,7 +13,7 @@ the javascript part should have been easier... too tired or i just cba to keep g
 ### Links
 
 - Solution URL : [code](https://github.com/EtnoPolino/Tip_calculator_app.git)
-- Live Site URL : [demo]()
+- Live Site URL : [demo](https://etnopolino.github.io/Tip_calculator_app/)
 
 ### Built with
 
