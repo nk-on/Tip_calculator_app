@@ -104,6 +104,9 @@ function calculate(){
 
 
 function calculateTip(){
+    if(bill.value === '' && numberOfPeople.value === ''){
+        return;
+    }
     buttons.forEach((button) => {
         button.classList.remove('active');
     });
